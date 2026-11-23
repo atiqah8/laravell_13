@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\QuestionController;
 use Illuminate\Support\Facades\Route;
@@ -25,3 +25,5 @@ Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard'
 Route::prefix('admin')->group(function () {
     Route::resource('pelanggan', PelangganController::class);
 });
+
+Route::resource('admin/user', UserController::class)->names('user');
